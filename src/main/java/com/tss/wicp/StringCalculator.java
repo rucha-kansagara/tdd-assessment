@@ -1,6 +1,7 @@
 package com.tss.wicp;
 
 import java.util.Arrays;
+import java.util.regex.Pattern;
 
 public class StringCalculator {
 
@@ -8,7 +9,8 @@ public class StringCalculator {
         if (n.isEmpty()) {
             return 0;
         }
-        return Arrays.stream(n.split(","))
+
+        return Arrays.stream(DelimiterStrategyFactory.getDelimiterStrategy(n).split(n))
                 .mapToInt(Integer::parseInt)
                 .sum();
     }

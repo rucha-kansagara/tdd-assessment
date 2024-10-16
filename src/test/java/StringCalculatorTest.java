@@ -19,4 +19,15 @@ public class StringCalculatorTest {
         Assert.assertEquals(26, StringCalculator.add("5,6,7,8"));
     }
 
+    @Test
+    public void addMultipleValueCommaOrNewLineSeparated() {
+        Assert.assertEquals(26, StringCalculator.add("5\n6,7\n8"));
+    }
+
+    @Test
+    public void addMultipleValueCustomDelimiter() {
+        Assert.assertEquals(26, StringCalculator.add("//;\n5;6;7;8"));
+    }
+
+
 }
