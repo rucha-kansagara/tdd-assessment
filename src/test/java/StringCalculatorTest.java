@@ -13,4 +13,10 @@ public class StringCalculatorTest {
     public void addSingleValue() {
         Assert.assertEquals(5, StringCalculator.add("5"));
     }
+
+    @Test
+    public void addMultipleValueCommaSeparated() {
+        Assert.assertEquals(26, StringCalculator.add("5,6,7,8"));
+    }
+
 }
