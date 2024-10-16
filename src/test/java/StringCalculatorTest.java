@@ -8,4 +8,9 @@ public class StringCalculatorTest {
     public void addEmptyString() {
         Assert.assertEquals(0, StringCalculator.add(""));
     }
+
+    @Test
+    public void addSingleValue() {
+        Assert.assertEquals(5, StringCalculator.add("5"));
+    }
 }
