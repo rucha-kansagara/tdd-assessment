@@ -12,6 +12,11 @@ public class StringCalculator {
 
         return Arrays.stream(DelimiterStrategyFactory.getDelimiterStrategy(n).split(n))
                 .mapToInt(Integer::parseInt)
+                .peek(num -> {
+                    if (num < 0) {
+                        throw new IllegalArgumentException("Negative numbers not allowed: " + num);
+                    }
+                })
                 .sum();
     }
 }
