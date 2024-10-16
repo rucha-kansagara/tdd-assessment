@@ -1,6 +1,6 @@
 import com.tss.wicp.StringCalculator;
-//import org.junit.Test;
 import org.junit.jupiter.api.Test;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 
@@ -33,7 +33,9 @@ public class StringCalculatorTest {
 
     @Test
     public void negativeNumber() {
-        Exception e = assertThrows(IllegalArgumentException.class,()->{ StringCalculator.add("//;\n-5;6;7;8");});
+        Exception e = assertThrows(IllegalArgumentException.class, () -> {
+            StringCalculator.add("//;\n-5;6;7;8");
+        });
         assertEquals("Negative numbers not allowed: -5", e.getMessage());
     }
 

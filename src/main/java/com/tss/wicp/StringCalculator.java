@@ -1,7 +1,6 @@
 package com.tss.wicp;
 
 import java.util.Arrays;
-import java.util.regex.Pattern;
 
 public class StringCalculator {
 
