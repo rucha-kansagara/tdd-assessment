@@ -34,9 +34,9 @@ public class StringCalculatorTest {
     @Test
     public void negativeNumber() {
         Exception e = assertThrows(IllegalArgumentException.class, () -> {
-            StringCalculator.add("//;\n-5;6;7;8");
+            StringCalculator.add("//;\n-5;-6;7;8");
         });
-        assertEquals("Negative numbers not allowed: -5", e.getMessage());
+        assertEquals("Negative numbers not allowed: -5,-6", e.getMessage());
     }
 
 

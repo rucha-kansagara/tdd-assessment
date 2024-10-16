@@ -8,14 +8,19 @@ public class StringCalculator {
         if (n.isEmpty()) {
             return 0;
         }
-
-        return Arrays.stream(DelimiterStrategyFactory.getDelimiterStrategy(n).split(n))
+        StringBuilder negativeNumbers = new StringBuilder();
+        int sum = Arrays.stream(DelimiterStrategyFactory.getDelimiterStrategy(n).split(n))
                 .mapToInt(Integer::parseInt)
                 .peek(num -> {
                     if (num < 0) {
-                        throw new IllegalArgumentException("Negative numbers not allowed: " + num);
+                        negativeNumbers.append(num).append(",");
                     }
                 })
                 .sum();
+        if (negativeNumbers.length() > 0) {
+            negativeNumbers.setLength(negativeNumbers.length() - 1);
+            throw new IllegalArgumentException("Negative numbers not allowed: " + negativeNumbers);
+        }
+        return sum;
     }
 }
